@@ -35,4 +35,25 @@ describe("#wordSearch()", function() {
 
     assert.isTrue(result);
   });
+
+  it("should return true if the word is present & vertical", function() {
+    const result = wordSearch([
+      ['A', 'W', 'C', 'F', 'Q', 'U', 'A', 'L'],
+      ['S', 'E', 'I', 'Z', 'F', 'E', 'L', 'D'],
+      ['Y', 'F', 'C', 'A', 'Q', 'U', 'A', 'L'],
+      ['H', 'M', 'J', 'I', 'E', 'V', 'R', 'G'],
+      ['W', 'H', 'C', 'N', 'Y', 'E', 'R', 'L'],
+      ['B', 'F', 'R', 'A', 'N', 'E', 'Y', 'B'],
+      ['U', 'B', 'T', 'B', 'A', 'P', 'A', 'I'],
+      ['O', 'D', 'C', 'A', 'K', 'U', 'A', 'S'],
+      ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
+    ], 'ZAINAB')
+
+    assert.isTrue(result);
+  });
+  it("should return false if the word matrix is an empty array", function() {
+    const result = wordSearch([], 'SEINFELD')
+
+    assert.isFalse(result);
+  });
 });
